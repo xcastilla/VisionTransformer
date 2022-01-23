@@ -1,0 +1,27 @@
+training_options:
+    learning_rate: 0.001
+    weight_decay:  0.00001
+    batch_size: 256
+    train_epochs: 100
+    validation_split : 0.1
+    checkpoint_dir: "checkpoints/"
+
+model:
+    data_augmentation:
+        scale_size: 72
+        rotation_factor: 0.02
+        zoom_factor: 0.2
+    patch_size: 6
+    encoding_size: 64
+    encoder:
+        layers: 8
+        multihead_attention:
+            heads: 4
+            dropout: 0.1
+        mlp:
+            units: [128, 64]
+            dropout: 0.2
+    mlp:
+        units: [2048, 1024]
+        dropout: 0.5
+    dropout: 0.5
